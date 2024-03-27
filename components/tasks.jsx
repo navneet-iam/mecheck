@@ -4,7 +4,7 @@ import { useSetRecoilState } from "recoil";
 import { checklist } from "../context/checklistState";
 
 export default function Tasks() {
-  const [groupSelected, setGroupSelected] = React.useState(JSON.parse(localStorage.getItem('sampdata') || []));
+  const [groupSelected, setGroupSelected] = React.useState([0,0,0,0,0,0,0]);
   const setcheckliststate = useSetRecoilState(checklist);
   useEffect(()=>{
     console.log("here", groupSelected);
