@@ -12,6 +12,13 @@
   color: black !important;
 }
 
+.input-field{
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 20vw;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

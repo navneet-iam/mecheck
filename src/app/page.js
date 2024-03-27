@@ -1,15 +1,27 @@
-import CustomModal from "./modal";
-
+"use client"
+import CustomModal from "../../components/modal";
+import Tasks from "../../components/tasks";
+import { RecoilRoot } from "recoil";
+import './custom.css';
+import Link from "next/link";
 export default function Home() {
   return (
-      <div className="z-10 max-w-5xl w-full justify-between font-mono text-sm flex h-screen">
+    <RecoilRoot>
+    <div className="z-10 w-full font-mono text-sm h-screen">
+      <div className="flex cstmaround">
         <p className="">
-          Get started by sign in
+          Get started by <Link href="/statistics">push-ups</Link>
         </p>
         <p >
             By{" "}
             <CustomModal />
         </p>
       </div>
+
+      <div className="flex cstmcenter">
+        <Tasks />
+      </div>
+    </div>
+    </RecoilRoot>
   );
 }

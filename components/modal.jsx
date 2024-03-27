@@ -1,12 +1,15 @@
 "use client"
 import React, { useEffect } from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import { RecoilRoot, useRecoilValue } from "recoil"
+import { checklist } from "../context/checklistState";
 
 export default function CustomModal() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
     useEffect(()=>{
         onOpen();
-    }, [])  
+    }, []) 
+    const dataitem = useRecoilValue(checklist)
   return (
     <>
       <Button onPress={onOpen}>Open Modal</Button>
@@ -41,6 +44,7 @@ Don’t stop when you are tired. Stop when you are done.
                 <p>
                 4. CLASSIFIED: This is the origin story of a hero. The hero is you.
                 </p>
+                stats data: {dataitem.map((i)=> i)}
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

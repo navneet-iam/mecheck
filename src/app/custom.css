@@ -1,0 +1,9 @@
+.cstmaround{
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.cstmcenter{
+    justify-content: center;
+    align-items: center;
+}
